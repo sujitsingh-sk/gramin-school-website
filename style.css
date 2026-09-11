@@ -651,6 +651,93 @@ section {
     transform: translate(-50%, -50%);
 }
 
+.gallery-placeholder p {
+    color: var(--soft-white);
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.gallery-note {
+    color: var(--muted-blue-dim);
+    font-style: italic;
+    font-size: 12px;
+}
+
+/* ============================
+   LEADERSHIP
+============================ */
+.leadership {
+    padding: 90px 20px;
+    background-color: var(--navy-deep);
+    text-align: center;
+}
+
+.leadership-content {
+    max-width: 900px;
+    margin: auto;
+}
+
+.leadership h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+
+.leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+    text-align: left;
+}
+
+.leadership-card {
+    background: linear-gradient(160deg, var(--panel) 0%, var(--navy-soft) 100%);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 34px 28px;
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.3);
+}
+
+.leadership-card:hover {
+    border-color: var(--gold-dim);
+    box-shadow: 0 24px 44px rgba(0, 0, 0, 0.45);
+}
+
+.leadership-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 18px;
+    border-radius: 50%;
+    border: 1.5px solid var(--gold-soft);
+    background-color: var(--navy-deepest);
+    color: var(--gold-soft);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+}
+
+.leadership-card h3 {
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+.leadership-role {
+    color: var(--gold-soft);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.leadership-message {
+    padding-top: 14px;
+    border-top: 1px dashed var(--line-strong);
+}
+
 /* ============================
    ADMISSIONS
 ============================ */
@@ -865,6 +952,8 @@ section {
     .about h2,
     .academics h2,
     .why-choose h2,
+    .achievements-heading h2,
+    .leadership h2,
     .activities h2,
     .gallery h2,
     .contact h2 {
@@ -955,5 +1044,201 @@ button:focus-visible {
     .tilt-card,
     .tilt-card-soft {
         transform: none !important;
+    }
+}
+
+
+/* =========================================
+   ACHIEVEMENTS
+========================================= */
+.achievements {
+    position: relative;
+    padding: 120px 6vw;
+    background: #08111d;
+    overflow: hidden;
+}
+
+.achievements::before {
+    content: "";
+    position: absolute;
+    width: 520px;
+    height: 520px;
+    top: -220px;
+    right: -180px;
+    border: 1px solid rgba(212, 175, 55, 0.12);
+    border-radius: 50%;
+}
+
+.achievements::after {
+    content: "";
+    position: absolute;
+    width: 340px;
+    height: 340px;
+    bottom: -190px;
+    left: -140px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 50%;
+}
+
+.achievements-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.achievements-heading {
+    max-width: 720px;
+    margin-bottom: 55px;
+}
+
+.achievements-heading h2 {
+    font-size: 36px;
+    margin-bottom: 18px;
+}
+
+.achievements-heading h2 span {
+    color: #d4af37;
+}
+
+.achievements-heading > p:last-child {
+    max-width: 650px;
+    color: rgba(255,255,255,0.68);
+    line-height: 1.8;
+}
+
+.achievement-highlight {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    align-items: center;
+    gap: 42px;
+    padding: 42px 48px;
+    margin-bottom: 26px;
+    border: 1px solid rgba(212,175,55,0.24);
+    background: linear-gradient(105deg, rgba(212,175,55,0.08), rgba(255,255,255,0.025));
+}
+
+.achievement-number {
+    font-family: Georgia, serif;
+    font-size: clamp(4rem, 8vw, 6.5rem);
+    line-height: 0.9;
+    color: #f4f0e5;
+    letter-spacing: -0.06em;
+}
+
+.achievement-number span {
+    color: #d4af37;
+    font-size: 0.45em;
+    letter-spacing: 0;
+}
+
+.achievement-kicker {
+    margin: 0 0 10px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: #d4af37;
+}
+
+.achievement-highlight h3,
+.achievement-card h3 {
+    margin: 0 0 10px;
+    color: #fff;
+}
+
+.achievement-highlight p:last-child,
+.achievement-card p:last-child {
+    margin: 0;
+    color: rgba(255,255,255,0.66);
+    line-height: 1.75;
+}
+
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.achievement-card {
+    position: relative;
+    min-height: 300px;
+    padding: 30px 25px 28px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.025);
+    transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(212,175,55,0.35);
+    background: rgba(212,175,55,0.045);
+}
+
+.achievement-index {
+    position: absolute;
+    top: 20px;
+    right: 22px;
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.12em;
+}
+
+.achievement-icon {
+    display: flex;
+    width: 48px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 42px;
+    border: 1px solid rgba(212,175,55,0.3);
+    color: #d4af37;
+    font-size: 1.05rem;
+}
+
+.achievement-card h3 {
+    font-family: Georgia, serif;
+    font-size: 1.45rem;
+    font-weight: 500;
+}
+
+.achievement-note {
+    margin: 28px 0 0;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.4);
+}
+
+@media (max-width: 900px) {
+    .achievement-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .achievements {
+        padding: 85px 6vw;
+    }
+
+    .achievement-highlight {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 32px 25px;
+    }
+
+    .achievement-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .achievement-card {
+        min-height: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .achievement-card {
+        transition: none;
+    }
+
+    .achievement-card:hover {
+        transform: none;
     }
 }
